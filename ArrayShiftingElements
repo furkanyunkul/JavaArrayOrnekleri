@@ -1,0 +1,20 @@
+import java.util.Arrays;
+
+public class Main {
+	
+	public static int[] shifting(int[] liste) {
+		int temp=liste[0];
+		for(int i=1;i<liste.length;i++) {
+			liste[i-1]=liste[i];
+		}
+		liste[liste.length-1]=temp;
+		return liste;
+	}
+	
+	public static void main(String[] args) {
+		//Sırayı bir öncekine kaydırma
+		int[] myList= {5,4,8,12,9,7,0,2,4,1,6,3,12,18,24,12};
+		System.out.println(Arrays.toString(shifting(myList)));
+	}
+
+}
