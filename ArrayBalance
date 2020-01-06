@@ -1,0 +1,40 @@
+
+public class Main {
+	//Array sağ taraf ile sol tarafın toplamı eşit ise true değilse false
+	
+	public static boolean denge(double [] list) {
+		double toplam=0;
+		double sonucSag=0;
+		double sonucSol=0;
+		int sira=0;
+		for(int i=0;i<list.length;i++) {
+			toplam=toplam+list[i];
+		}
+		double ortalama=toplam/2;
+		for(int i=0;i<list.length;i++) {
+			sonucSag=sonucSag+list[i];
+			if(sonucSag==ortalama) {
+				sira=i;
+				break;
+			}
+		}
+		for(int j=(list.length-1);j>sira;j--) {
+			sonucSol=sonucSol+list[j];
+			if(sonucSol==ortalama) {
+				return true;
+			}
+		}
+		return false;
+	}
+		
+	public static void main(String[] args) {
+		double [] ornek1= {1,1,1,2,1};
+		double [] ornek2= {2,1,1,2,1};
+		double [] ornek3= {10,10};
+		double [] ornek4= {1,2,3,4,2};
+		System.out.println("ornek1:"+denge(ornek1));
+		System.out.println("ornek2:"+denge(ornek2));
+		System.out.println("ornek3:"+denge(ornek3));
+		System.out.println("ornek4:"+denge(ornek4));
+	}
+}
