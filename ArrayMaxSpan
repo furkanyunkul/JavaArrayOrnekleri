@@ -1,0 +1,22 @@
+
+public class Main {
+	public static int maxSpan(int[]list) {
+		int maxUzaklik=-1;
+		for(int i=0;i<list.length;i++) {
+			for(int j=list.length-1;j>i;j--) {
+				if(list[i]==list[j]) {
+					if(maxUzaklik<(j-i)) {
+						maxUzaklik=j-i;						
+					}
+				}
+			}			
+		}		
+		return maxUzaklik;
+	}
+	//listedeki aynı sayılar arası en uzak mesafeyi belirleme
+	public static void main(String[] args) {
+		int [] liste= {1,4,2,1,4,4,4,7,10,4}; 
+		int sonuc=maxSpan(liste);
+		System.out.println(sonuc);
+	}
+}
