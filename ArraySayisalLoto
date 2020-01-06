@@ -1,0 +1,39 @@
+import java.util.Arrays;
+
+public class Main {
+	
+	public static void sayisalLoto() {
+		String sonuc="";
+		int []myList=new int[6];
+		for (int i=0;i<6;i++) {
+			int sayi=(int) (Math.random()*49)+1;
+			for(int j=0;j<=i;j++) {
+				if(myList[j]==sayi) {
+					sayi=(int) (Math.random()*49)+1;
+					myList[i]=sayi;
+				}
+			}
+			myList[i]=sayi;		
+		}
+		Arrays.sort(myList);
+		
+		for(int i=0;i<6;i++) {
+			if(i<5) {
+				sonuc=sonuc+myList[i]+",";
+			}
+			else {
+				sonuc=sonuc+myList[i];
+			}
+			
+		}
+		System.out.println(sonuc);	
+	}
+	
+	public static void main(String[] args) {
+		
+		for(int i=0;i<5;i++) {
+			sayisalLoto();
+		}
+	}
+	
+}
