@@ -1,0 +1,22 @@
+
+public class Main {
+	//Arraya girilen sayıların min ve max bulma
+	public static void maxMin(int[] list) {
+		int maks=0;
+		int min=(int) Double.POSITIVE_INFINITY;
+		for(int i=0;i<list.length;i++) {
+			if(list[i]>maks) {
+				maks=list[i];
+			}
+			if(list[i]<min) {
+				min=list[i];
+			}
+		}
+		System.out.println("En buyuk:"+maks+"\nEn kucuk:"+min);
+	}
+	
+	public static void main(String[] args) {
+		int[] liste= {5,8,9,1,5,6,2,7,1,2,5,4};
+		maxMin(liste);
+	}
+}
