@@ -1,0 +1,32 @@
+
+public class Main {
+	public static void main(String[] args) {
+		int [][] noktalar = {{ 8, 1 }, { 5, 0 }, { 1, 1 }, { 4, 1 }, { 5, 5 },{ -1, 3 }, { -1, -1 }, { 2, 7 }, { 3, 3 }, { -4, 2 }};
+		
+		double enYakinUzaklik=Double.POSITIVE_INFINITY;
+		int birinciNokta=-1;
+		int ikinciNokta=-1;
+		
+		for(int i=0;i<noktalar.length;i++) {
+			for(int j=i+1;j<noktalar.length;j++) {
+				double uzaklik=euklid(noktalar[i],noktalar[j]);
+				
+				if(enYakinUzaklik>uzaklik) {
+					enYakinUzaklik=uzaklik;
+					birinciNokta=i;
+					ikinciNokta=j;
+				}
+			}
+		}
+		System.out.println(birinciNokta+" nokta ile "+ikinciNokta+" arası en yakin uzaklik "+enYakinUzaklik);
+	}
+
+	private static double euklid(int[] is, int[] is2) {
+		double kareToplami=0;
+		for(int i=0;i<is2.length;i++) {
+			double dif=is[i]-is2[i];
+			kareToplami=kareToplami+dif*dif;		
+		}
+		return Math.sqrt(kareToplami);
+	}
+}
