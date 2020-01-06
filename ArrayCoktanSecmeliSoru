@@ -1,0 +1,20 @@
+
+public class Main {
+	public static void main(String[] args) {
+		char[][] cevap= {{'A','B','C','D'},{'B','D','A','B'},{'A','B','B','A'}};
+		char[] anahtar= {'A','B','C','D'};
+		for(int i=0;i<cevap.length;i++) {
+			int dogru=0;
+			int yanlis=0;
+			for(int j=0;j<cevap[i].length;j++) {
+				if(anahtar[j]==cevap[i][j]) {
+					dogru=dogru+1;
+				}
+				else {
+					yanlis=yanlis+1;
+				}
+			}
+		System.out.println(i+"ogrenci "+dogru+" dogru bilmis "+yanlis+" yanlis");
+		}
+	}	
+}
