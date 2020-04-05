@@ -1,0 +1,20 @@
+
+public class Main {
+	//Array içinde duplice olan sayıları bulma
+	public static void duplicate(int[]list) {
+		int sayi=-1;
+		
+		for(int i=0;i<list.length;i++) {
+			for(int j=i+1;j<list.length;j++) {
+				if(list[i]==list[j]) {
+					sayi=list[i];
+					System.out.println(sayi);
+				}
+			}
+		}
+	}
+	public static void main(String[] args) {
+		int[] liste={2, 8, 2, 3, 3,1};
+		duplicate(liste);
+	}
+}
